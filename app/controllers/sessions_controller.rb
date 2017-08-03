@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     # if the user exists and the password entered is correct
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to '/admin/products'
+      redirect_to '/products'
     else
       redirect_to '/login'
     end
