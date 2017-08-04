@@ -32,15 +32,13 @@
       <% end %>
     </div>
 
-    <%= form_for @product do |f| %>
-      <%= f.fields_for :reviews do |reviews_form| %>
-        <%= reviews_form.label :description %>
-        <%= reviews_form.text_area :description %>
+    <%= form_for(:review, url:"/products/#{@product.id}/reviews") do |f| %>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
 
-        <%= reviews_form.label :rating %>
-        <%= reviews_form.select :rating, (1..5) %>
-        <%= reviews_form.submit 'Create' %>
-      <% end %>
+      <%= f.label :rating %>
+      <%= f.select :rating, (1..5) %>
+      <%= f.submit 'Create' %>
     <% end %>
 
 
