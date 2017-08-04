@@ -30,8 +30,19 @@
       <% @reviews.each do |review| %>
         <%= render 'review', review: review %>
       <% end %>
-
     </div>
+
+    <%= form_for @product do |f| %>
+      <%= f.fields_for :reviews do |reviews_form| %>
+        <%= reviews_form.label :description %>
+        <%= reviews_form.text_area :description %>
+
+        <%= reviews_form.label :rating %>
+        <%= reviews_form.select :rating, (1..5) %>
+        <%= reviews_form.submit 'Create' %>
+      <% end %>
+    <% end %>
+
 
   </article>
 
