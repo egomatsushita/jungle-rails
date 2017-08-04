@@ -18,11 +18,10 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
-  # resource :user, only: [:create, :new]
-  # resources :users, only: [:create, :new]
 
-  # resource :session, only: [:new, :create, :destroy]
-  # resources :sessions, only: [:new, :create, :destroy]
+  resources :products, only: [:show] do
+    resources :reviews, only: [:create]
+  end
 
   namespace :admin do
     root to: 'dashboard#show'
