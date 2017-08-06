@@ -1,17 +1,15 @@
-<div class="each-review">
-  <table>
-    <tr>
-      <td><b>Rating</b></td>
-      <td><%= review.rating %></td>
-    </tr>
-    <tr>
-      <td><b>Review</b></td>
-      <td><%= review.description %></td>
-    </tr>
-    <tr>
-      <td><b>User</b></td>
-      <td><%= review.user_id %></td>
-    </tr>
-  </table>
-</div>
+
+<tr>
+  <td>
+    <%= review.rating %>
+  </td>
+  <td>
+    <%= review.description %>
+  </td>
+  <td>
+  <% if current_user.present? && review.user_id == current_user.id %>
+  <%= link_to fa_icon('trash'), product_review_path(@product.id, review.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+  </td>
+</tr>
 

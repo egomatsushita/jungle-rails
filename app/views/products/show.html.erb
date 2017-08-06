@@ -26,21 +26,41 @@
       </div>
 
     </div>
-    <div class="all-reviews col-sm-8">
-      <% @reviews.each do |review| %>
-        <%= render 'review', review: review %>
+
+    <table class="table table-bordered reviews">
+      <thead>
+        <tr>
+          <th>Rating</th>
+          <th colspan="2">Review</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reviews.each do |review| %>
+          <%= render 'review', review: review %>
+        <% end %>
+      </tbody>
+    </table>
+
+    <% if current_user %>
+
+      <%= form_for(:review, url:"/products/#{@product.id}/reviews") do |f| %>
+      <div class="new-review-box">
+
+        <table class="new-review">
+          <tr>
+            <td><%= f.label :description %></td>
+            <td><%= f.text_area :description %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :rating %></td>
+            <td><%= f.select :rating, (1..5) %><span class="margin"><%= f.submit 'Send Review' %></span></td>
+          </tr>
+        </table>
+
+      </div>
       <% end %>
-    </div>
 
-    <%= form_for(:review, url:"/products/#{@product.id}/reviews") do |f| %>
-      <%= f.label :description %>
-      <%= f.text_area :description %>
-
-      <%= f.label :rating %>
-      <%= f.select :rating, (1..5) %>
-      <%= f.submit 'Create' %>
     <% end %>
-
 
   </article>
 

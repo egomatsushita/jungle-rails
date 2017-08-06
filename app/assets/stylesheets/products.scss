@@ -1,3 +1,12 @@
+body {
+  div.login {
+    margin-right: 150px;
+    color: blue;
+    float: right;
+    font-style: italic;
+  }
+}
+
 main section.products-index,
 main section.categories-show {
 
@@ -81,6 +90,36 @@ main section.products-show {
   .product-detail {
     img.main-img {
       max-width: 100%;
+    }
+
+    .reviews {
+      background: #f8f8f8;
+      margin-top: 20px;
+
+      th {
+        background: lightsteelblue;
+      }
+
+      td:nth-child(1),
+      td:nth-child(3) {
+        width: 5%;
+        text-align: center;
+      }
+    }
+
+    div.new-review-box {
+      padding: 5px;
+      background: lightsteelblue;
+    }
+
+    .new-review {
+      margin: 10px auto;
+      width: 30%;
+
+      span.margin {
+        margin-left: 29px;
+      }
+
     }
   }
 }
