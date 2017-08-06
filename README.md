@@ -67,11 +67,19 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
-!["Main page"]()
-!["Sold out product"]()
-!["Sign up"]()
-!["Signed in user"]()
-!["Show product"]()
-!["Comment with logged in user"]()
-!["Comment without user"]()
-!["Order"]()
+- Main Page
+!["Main page"](https://github.com/egomatsushita/jungle-rails/blob/master/docs/main_page.png?raw=true)
+- Sold out product
+!["Sold out product"](https://github.com/egomatsushita/jungle-rails/blob/master/docs/sold_out_badge.png?raw=true)
+- Sign up
+!["Sign up"](https://github.com/egomatsushita/jungle-rails/blob/master/docs/signup.png?raw=true)
+- Signed in user
+!["Signed in user"](https://github.com/egomatsushita/jungle-rails/blob/master/docs/signed_in.png?raw=true)
+- Show product
+!["Show product"](https://github.com/egomatsushita/jungle-rails/blob/master/docs/show_product.png?raw=true)
+- Trash can for comment made by logged in user
+!["Comment with logged in user"](https://github.com/egomatsushita/jungle-rails/blob/master/docs/comment_logged_in_user.png?raw=true)
+- Comments without trash can
+!["Comment without user"](https://github.com/egomatsushita/jungle-rails/blob/master/docs/comment_logged_out_user.png?raw=true)
+- Order page
+!["Order"](https://github.com/egomatsushita/jungle-rails/blob/master/docs/order.png?raw=true)
