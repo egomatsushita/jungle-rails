@@ -102,7 +102,7 @@ RSpec.describe User, type: :model do
         email: 'eVedder@test.com',
         password: '1234',
         password_confirmation: '1234')
-      expect(@user.authenticate_with_credentials('eVedder@test.com', '1234').present?).to eq(true)
+      expect(User.authenticate_with_credentials('eVedder@test.com', '1234').present?).to eq(true)
     end
 
     it 'User should not log in with an incorrect password' do
@@ -111,7 +111,7 @@ RSpec.describe User, type: :model do
         email: 'eVedder1@test.com',
         password: '1234',
         password_confirmation: '1234')
-      expect(@user.authenticate_with_credentials('eVedder1@test.com', '12345').present?).to eq(false)
+      expect(User.authenticate_with_credentials('eVedder1@test.com', '12345').present?).to eq(false)
     end
 
     it 'User should log in with spaces before email' do
@@ -120,7 +120,7 @@ RSpec.describe User, type: :model do
         email: 'eVedder2@test.com',
         password: '1234',
         password_confirmation: '1234')
-      expect(@user.authenticate_with_credentials(' eVedder2@test.com', '1234').present?).to eq(true)
+      expect(User.authenticate_with_credentials(' eVedder2@test.com', '1234').present?).to eq(true)
     end
 
     it 'User should log in with spaces after email' do
@@ -129,7 +129,7 @@ RSpec.describe User, type: :model do
         email: 'eVedder3@test.com',
         password: '1234',
         password_confirmation: '1234')
-      expect(@user.authenticate_with_credentials('eVedder3@test.com ', '1234').present?).to eq(true)
+      expect(User.authenticate_with_credentials('eVedder3@test.com ', '1234').present?).to eq(true)
     end
 
     it 'User should log in even if email is in different case' do
@@ -138,7 +138,7 @@ RSpec.describe User, type: :model do
         email: 'eVedder4@test.com',
         password: '1234',
         password_confirmation: '1234')
-      expect(@user.authenticate_with_credentials('EvEDDER4@test.com ', '1234').present?).to eq(true)
+      expect(User.authenticate_with_credentials('EvEDDER4@test.com ', '1234').present?).to eq(true)
     end
   end
 end

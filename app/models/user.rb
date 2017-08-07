@@ -6,10 +6,10 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: { case_sensitive: false }
   validates :name, :email, :password, :password_confirmation, presence: true
 
-  def authenticate_with_credentials(email, password)
+  def self.authenticate_with_credentials(email, password)
     email = email.strip
-    user = User.where('lower(email) = ?', email.downcase)
-    if user && authenticate(password)
+    user = User.where('lower(email) = ?', email.downcase).first
+    if user && user.authenticate(password)
       return user
     else
       return nil
